@@ -2,10 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ContactsList from './ContactsList';
 
-let contacts = {
-  name: 'Richard',
-  phone: '555 555 5555'
-};
+let contacts = [{
+    id: 1,
+    name: 'Richard',
+    phone: '555 555 5555'
+},  {
+    id: 2,
+    name: 'Jonny',
+    phone: '555 444 5555'
+}, {
+    id: 3,
+    name: 'Chris',
+    phone: '555 333 5555'
+}, {
+    id:4,
+    name: 'Andy',
+    phone: '555 666 5555'
+}];
 
 class App extends React.Component {
     render() {
