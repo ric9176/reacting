@@ -8,7 +8,7 @@ class ContactsList extends React.Component {
     constructor() {
       super();
       this.state = {
-        search: 'Level Up'
+        search: ''
       };
     }
 
@@ -17,17 +17,21 @@ class ContactsList extends React.Component {
     }
 
     render() {
-      console.log(this.props.contacts);
+      let filteredContacts = this.props.contacts.filter(
+        (contact) => {
+          return contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+        }
+      );
       return (
         <div>
+        <input type="text"
+        value={this.state.search}
+        onChange={this.updateSearch.bind(this)}/>
           <ul>
-            {this.props.contacts.map((contact)=> {
+            {filteredContacts.map((contact)=> {
               return <Contact contact={contact} key={contact.id} />;
             })}
           </ul>
-          <input type="text"
-          value={this.state.search}
-          onChange={this.updateSearch.bind(this)}/>
         </div>
       );
     }
