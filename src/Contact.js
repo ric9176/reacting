@@ -1,15 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Contact extends React.Component {
-    render() {
-      // console.log(this.props.contacts);
-      return (
+const Contact = ({contact}) =>
           <li>
-            {this.props.contact.name} {this.props.contact.phone}
+            {contact.name} {contact.phone}
           </li>
-      );
-    }
-}
 
 export default Contact;
