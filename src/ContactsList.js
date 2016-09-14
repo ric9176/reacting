@@ -31,7 +31,7 @@ class ContactsList extends React.Component {
 
     render() {
       let filteredContacts = this.state.contacts.filter(
-        (contact) => {
+        contact => {
           return contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
         }
       );
@@ -48,7 +48,7 @@ class ContactsList extends React.Component {
           <button type="submit">Add New Contact</button>
         </form>
           <ul>
-            {filteredContacts.map((contact)=> {
+            {filteredContacts.map(contact => {
               return <Contact contact={contact} key={contact.id} />;
             })}
           </ul>
